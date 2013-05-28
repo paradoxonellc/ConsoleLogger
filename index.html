@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ConsoleLogger</title>
+	<script src="consolelogger.js"></script>
+	<script>
+	// Create a new instance of our ConsoleLogger
+	var logger = new ConsoleLogger;
+	</script>
+</head>
+<body>
+
+<script>
+
+// Test calls.
+
+console.log('log');
+console.log('log1');
+console.log('log2');
+console.log('log3');
+console.info('info');
+console.info('info1');
+console.info('info2');
+console.info('info3');
+console.warn('warning');
+console.warn('warning1');
+console.warn('warning2');
+console.warn('warning3');
+console.error('error');
+console.error('error1');
+console.error('error2');
+console.error('error3');
+
+// Example code to retrieve the history
+var logHistory = logger.getLog(); // Get the console.log history
+var infoHistory = logger.getInfoLog(); // Get the console.info history
+var warningHistory = logger.getWarnLog(); // Get the console.warn history
+var errorHistory = logger.getErrorLog(); // Get the console.error history
+
+var allLogs = logger.getLogHistory(); // Returns all log histories as one array.
+
+document.body.innerHTML = document.body.innerHTML + '<b>Log History</b><br>';
+document.body.innerHTML = document.body.innerHTML + '<br>' + logHistory.join('<br>');
+document.body.innerHTML = document.body.innerHTML + '<br><br><b>Info History</b><br>';
+document.body.innerHTML = document.body.innerHTML + '<br>' + infoHistory.join('<br>');
+document.body.innerHTML = document.body.innerHTML + '<br><br><b>Warning History</b><br>';
+document.body.innerHTML = document.body.innerHTML + '<br>' + warningHistory.join('<br>');
+document.body.innerHTML = document.body.innerHTML + '<br><br><b>Error History</b><br>';
+document.body.innerHTML = document.body.innerHTML + '<br>' + errorHistory.join('<br>');
+document.body.innerHTML = document.body.innerHTML + '<br><br><b>Using getLogHistory()</b><br>';
+document.body.innerHTML = document.body.innerHTML + '<br>' + allLogs.join('<br>');
+</script>
+
+</body>
+</html>

@@ -2,11 +2,17 @@
 <html>
 <head>
 	<title>ConsoleLogger</title>
-	<script src="consolelogger.js"></script>
-	<script>
-	// Create a new instance of our ConsoleLogger
-	var logger = new ConsoleLogger;
-	</script>
+  
+    
+    <script src="consolelogger.js"></script>
+    <script>
+    // Create a new instance of our ConsoleLogger
+    var logger = new ConsoleLogger;
+    </script>
+          
+    <script>
+    test();
+    </script>
 </head>
 <body>
 
@@ -32,12 +38,13 @@ console.error('error2');
 console.error('error3');
 
 // Example code to retrieve the history
-var logHistory = logger.getLog(); // Get the console.log history
-var infoHistory = logger.getInfoLog(); // Get the console.info history
-var warningHistory = logger.getWarnLog(); // Get the console.warn history
-var errorHistory = logger.getErrorLog(); // Get the console.error history
+    var logHistory = logger.getLog(); // Get the console.log history
+    var infoHistory = logger.getInfoLog(); // Get the console.info history
+    var warningHistory = logger.getWarnLog(); // Get the console.warn history
+    var errorHistory = logger.getErrorLog(); // Get the console.error history
+    var windowLog = logger.getWindowLog(); // Get the window error history
 
-var allLogs = logger.getLogHistory(); // Returns all log histories as one array.
+    var allLogs = logger.getLogHistory(); // Returns all log histories as one array.
 
 document.body.innerHTML = document.body.innerHTML + '<b>Log History</b><br>';
 document.body.innerHTML = document.body.innerHTML + '<br>' + logHistory.join('<br>');
@@ -47,6 +54,8 @@ document.body.innerHTML = document.body.innerHTML + '<br><br><b>Warning History<
 document.body.innerHTML = document.body.innerHTML + '<br>' + warningHistory.join('<br>');
 document.body.innerHTML = document.body.innerHTML + '<br><br><b>Error History</b><br>';
 document.body.innerHTML = document.body.innerHTML + '<br>' + errorHistory.join('<br>');
+document.body.innerHTML = document.body.innerHTML + '<br><br><b>Uncaught errors</b><br>';
+document.body.innerHTML = document.body.innerHTML + '<br>' + windowLog.join('<br>');
 document.body.innerHTML = document.body.innerHTML + '<br><br><b>Using getLogHistory()</b><br>';
 document.body.innerHTML = document.body.innerHTML + '<br>' + allLogs.join('<br>');
 </script>
